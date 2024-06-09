@@ -11,12 +11,22 @@ create_logs() {
     done
 }
 
+show_help() {
+    echo "Dostepne opcje::"
+    echo "--date, -d        Pokazuje dzisiejsza date"
+    echo "--logs, -l [N]    Tworzy N plikow log (domyslnie: 100)"
+    echo "--help, -h        Pokazuje pomoc"
+}
+
 case "$1" in
     --date|-d)
         date
         ;;
     --logs|-l)
         create_logs $2
+        ;;
+    --help|-h)
+        show_help
         ;;
 esac
 
